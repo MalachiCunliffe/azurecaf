@@ -2,6 +2,13 @@
 # Azure Provider source and version being used.
 
 terraform {
+  cloud {
+    organization = "kiwis"
+
+    workspaces {
+      name = "azurecaf"
+    }
+  }
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
