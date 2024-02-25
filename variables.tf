@@ -25,3 +25,9 @@ variable "client_id" {
   default     = null
   description = "clientID of the azure service principle"
 }
+
+variable "subscription_id" {
+  type        = string
+  default     = null
+  description = "Azure subscription ID"
+}
