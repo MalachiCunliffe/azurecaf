@@ -23,7 +23,7 @@ module "enterprise_scale" {
   source  = "Azure/caf-enterprise-scale/azurerm"
   version = "5.1.0" # change this to your desired version, https://www.terraform.io/language/expressions/version-constraints
 
-  default_location = "Australia East"
+  default_location = "australiaeast"
 
   providers = {
     azurerm              = azurerm
