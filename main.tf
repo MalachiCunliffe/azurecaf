@@ -1,7 +1,20 @@
 # You can use the azurerm_client_config data resource to dynamically
 # extract connection settings from the provider configuration.
 
-data "azurerm_client_config" "core" {}
+# Obtain client configuration from the un-aliased provider
+data "azurerm_client_config" "core" {
+  provider = azurerm
+}
+
+# Obtain client configuration from the "management" provider
+data "azurerm_client_config" "management" {
+  provider = azurerm.management
+}
+
+# Obtain client configuration from the "connectivity" provider
+data "azurerm_client_config" "connectivity" {
+  provider = azurerm.connectivity
+}
 
 # Call the caf-enterprise-scale module directly from the Terraform Registry
 # pinning to the latest version
