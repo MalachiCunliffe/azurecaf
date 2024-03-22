@@ -16,6 +16,7 @@ data "azurerm_client_config" "connectivity" {
   provider = azurerm.connectivity
 }
 
+# Obtain management group ID from azure that will be the base of the landing zone
 data "azurerm_management_group" "caf" {
   name = "caf"
 }
@@ -35,7 +36,7 @@ module "enterprise_scale" {
     azurerm.management   = azurerm.management
   }
 
-  root_parent_id = "caf" #data.azurerm_management_group.caf.id #data.azurerm_client_config.core.tenant_id
+  root_parent_id = "caf"
   root_id        = var.root_id
   root_name      = var.root_name
   library_path   = "${path.root}/lib"
