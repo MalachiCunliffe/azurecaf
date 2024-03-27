@@ -36,7 +36,7 @@ provider "azurerm" {
 provider "azurerm" {
   features {}
   alias           = "connectivity"
-  subscription_id = "9de08185-b8bb-4d5e-8b60-03940cbcf8f4"
+  subscription_id = azurerm_subscription.connectivity.id #"9de08185-b8bb-4d5e-8b60-03940cbcf8f4"
   client_id       = var.client_id
   client_secret   = var.client_secret
   tenant_id       = var.tenant_id
@@ -48,7 +48,7 @@ provider "azurerm" {
 provider "azurerm" {
   features {}
   alias           = "management"
-  subscription_id = "9fcd3b10-827a-44e1-8298-628ffc9f1c3e"
+  subscription_id = azurerm_subscription.management.id #"9fcd3b10-827a-44e1-8298-628ffc9f1c3e"
   client_id       = var.client_id
   client_secret   = var.client_secret
   tenant_id       = var.tenant_id
