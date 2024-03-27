@@ -36,20 +36,20 @@ module "enterprise_scale" {
     azurerm.management   = azurerm.management
   }
 
-  root_parent_id = "caf"
+  root_parent_id = data.azurerm_client_config.core.tenant_id
   root_id        = var.root_id
   root_name      = var.root_name
   library_path   = "${path.root}/lib"
 
   # Enable deployment of the management resources, using the management
   # aliased provider to populate the correct Subscription ID
-  deploy_management_resources = true
-  subscription_id_management  = data.azurerm_client_config.management.subscription_id
+  # deploy_management_resources = true
+  # subscription_id_management  = data.azurerm_client_config.management.subscription_id
 
   # Enable deployment of the connectivity resources, using the connectivity
   # aliased provider to populate the correct Subscription ID
-  deploy_connectivity_resources = true
-  subscription_id_connectivity  = data.azurerm_client_config.connectivity.subscription_id
+  # deploy_connectivity_resources = true
+  # subscription_id_connectivity  = data.azurerm_client_config.connectivity.subscription_id
 
   custom_landing_zones = {
     "${var.root_id}-online-example-1" = {
